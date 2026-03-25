@@ -1,3 +1,18 @@
+//ENUM in associative array 
+module test;
+  typedef enum {BLUE, GREEN , YELLOW} e1;
+  bit [3:0] a [e1] ;
+    initial begin
+    a[BLUE]   = 4'd5;
+    a[GREEN]  = 4'd10;
+    a[YELLOW] = 4'd15;
+
+      $display("BLUE   = %0d", a[BLUE]);
+      $display("GREEN  = %0d", a[GREEN]);
+      $display("YELLOW = %0d", a[YELLOW]);
+  end
+endmodule
+
 module test;
   bit [3:0] A [string];
   string a, idx ; //for checking first and last values of associative arrays we require an input arguement
@@ -48,10 +63,5 @@ module test;
     A.delete("BLUE");
     $display( " array = %0p", A);
     // array = '{"GREEN":'h6, "RED":'h2} 
-    
-    
-    
-    
-   
   end
 endmodule 
