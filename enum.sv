@@ -48,3 +48,17 @@ endmodule
   end
 
 endmodule*/
+//enum in associative array
+module test;
+  typedef enum {BLUE, GREEN , YELLOW} e1;
+  bit [3:0] a [e1] ;
+    initial begin
+    a[BLUE]   = 4'd5;
+    a[GREEN]  = 4'd10;
+    a[YELLOW] = 4'd15;
+
+      $display("BLUE   = %0d", a[BLUE]);
+      $display("GREEN  = %0d", a[GREEN]);
+      $display("YELLOW = %0d", a[YELLOW]);
+  end
+endmodule
